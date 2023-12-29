@@ -1,11 +1,11 @@
-import { useState, createContext , memo , useEffect, useRef} from "react";
-import { BrowserRouter, Routes, Route, Navigate , Link } from "react-router-dom";
+import { useState, createContext , useEffect, useRef} from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import Landing from './component/landingpage.js'
 import Login from './component/login.js'
 import Contestlist from './component/contestlist.js'
 import Signup from './component/signup.js'
-import Navbtn from './component/navigationbtn.js'
+// import Navbtn from './component/navigationbtn.js'
 import Home from "./component/home.js";
 import Scorecard from "./component/scorecard.js";
 import  Test from "./component/Test.js";

@@ -50,9 +50,9 @@ export default function Slidepage() {
       <Swiper className="mySwiper" ref={swiperRef} onSlideChange={(swiper) => setTocategory({contestlist:swiper.realIndex===0 , mycontest:swiper.realIndex===1 ,guide:swiper.realIndex===2})}>
         
         <SwiperSlide>
-          <marquee behavior="scroll" direction="left" scrollamount="10" className='text-center text-yellow-950 w-full px-2 bg-gradient-to-r from-yellow-800 via-yellow-700 to-yellow-600'>
+          {/* <marquee behavior="scroll" direction="left" scrollamount="10" className='text-center text-yellow-950 w-full px-2 bg-gradient-to-r from-yellow-800 via-yellow-700 to-yellow-600'>
               win up to &#x20B9;100000
-          </marquee>
+          </marquee> decpreated*/}
           {/*contest is being pass sepratly because to pass required contest in card else in card we have to find using loop */}
             {user['generalquizmatchjoined'][quiz._id] ?
              <p className='p-1 text-center text-sm rounded shadow-xl'> <i class="fa-regular fa-face-smile animate-pulse"></i> You Joined Successfully</p>
