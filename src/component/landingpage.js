@@ -56,50 +56,55 @@ function Landing(){
            
            <section>
            <p className='font-semibold text-xl px-2 bg-slate-100'>FAQ:</p>
-            <ul className='text-xl w-full pb-2'>
-                <li className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
+            <div className='text-xl w-full pb-2'>
+                <div className=' border shadow-inner p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
                     <div className='flex justify-between items-center'>
                         <p className='text-base'>What is Quiz11?</p>
                         <i className="fa-solid fa-angle-down"> </i>
                     </div>
-                    <li className='list-disc ml-4 text-base'>Yes1</li>
-                </li>  
-                <li className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
+                    <div className='list-disc ml-4 text-base overflow-y-scroll '>Quiz11 is platform similar to Dream11 where you can join a quiz test then quiz will be conducte
+                      at given time after completion of quiz  they will get reward of cash prize as per criteria.
+                     
+                    </div>
+                </div>  
+                <div className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
                     <div className='flex justify-between items-center'>
                         <p className='text-base'>Is it safe to add money to Quiz11?</p>
                         <i className="fa-solid fa-angle-down"> </i>
                     </div>
-                    <li className='list-disc ml-4 text-base'>Yes1</li>
-                </li>  
-                <li className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
+                    <div className='list-disc ml-4 text-base'>Yes You can add money with verified payment gateways provider like RazorPay.</div>
+                </div>  
+                <div className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
                     <div className='flex justify-between items-center'>
                         <p className='text-base'>How Quiz11 score calculated?</p>
                         <i className="fa-solid fa-angle-down"> </i>
                     </div>
-                    <li className='list-disc ml-4 text-base'>Yes1</li>
-                </li> 
-                <li className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
+                    <div className='list-disc ml-4 text-base'>Those who have more correct answer will get high rank.
+                      Note : If two have same score then those who have atteneded/submitted earlier will get preference.
+                    </div>
+                </div> 
+                <div className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
                     <div className='flex justify-between items-center'>
                         <p className='text-base'>When do I get my winnings?</p>
                         <i className="fa-solid fa-angle-down"> </i>
                     </div>
-                    <li className='list-disc ml-4 text-base'>Yes1</li>
-                </li>  
-                <li className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
+                    <div className='list-disc ml-4 text-base'>Money will be credited after quiz completion in you wallet. You can withdraw too in your Bank account in 2 day after withdrawing request</div>
+                </div>  
+                <div className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
                     <div className='flex justify-between items-center'>
                         <p className='text-base' >Which type of contest can I join</p>
                         <i className="fa-solid fa-angle-down"> </i>
                     </div>
-                    <li className='list-disc ml-4 text-base'>Yes1</li>
-                </li>   
-                <li className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
+                    <div className='list-disc ml-4 text-base'>There are wide range of tpics you can join in which you are proefficient</div>
+                </div>   
+                <div className=' border shadow-inner  p-2 border border-black m-2 transition-all duration-500 h-10 overflow-hidden hover:h-36'>
                     <div className='flex justify-between items-center'>
                         <p className='text-base' >How to Play Quiz11</p>
                         <i className="fa-solid fa-angle-down"> </i>
                     </div>
-                    <li className='list-disc ml-4 text-base'>Yes1</li>
-                </li>              
-            </ul>
+                    <div className='list-disc ml-4 text-base'>You can have Demo of bonus &#x20B9;100 on signup</div>
+                </div>              
+            </div>
            </section>
             <footer className="bg-gray-900 py-4 text-center text-gray-300">
                 &copy; 2023 Quiz11
