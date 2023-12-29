@@ -14,8 +14,8 @@ export const UserContext = createContext();
 // const MemoizedHome = memo(Home);//// This is to avoid re-rendering on parent's component state changes
 // const apiUrl=process.env.REACT_APP_API_URL;
 // const apiUrl='http://13.232.212.71:8000';
-const apiUrl='http://127.0.0.1:8000';
-// const apiUrl='https://quizback-production-73b6.up.railway.app';
+// const apiUrl='http://127.0.0.1:8000';
+const apiUrl='https://quizback-production-73b6.up.railway.app';
 console.log(apiUrl);
 
 const App = () => {
