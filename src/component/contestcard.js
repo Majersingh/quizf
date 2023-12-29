@@ -27,8 +27,11 @@ function Card({quiz ,contest}){
                 setLoading(1);
                 window.location.reload();
             }
-            else setLoading(-2);
-        } catch (error) {
+            else {
+                alert("It seems insufficient Balence");
+                setLoading(-2);
+                }
+        catch (error) {
             console.error('Error fetching joining contest:', error.message);
             return null;
         }   
