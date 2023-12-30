@@ -1,0 +1,38 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: node:14  # Specify the Node.js version you need
+
+    steps:
+      - checkout  # Checkout your source code
+
+      - run:
+          name: Install Dependencies
+          command: npm install
+
+      - run:
+          name: Build React App
+          command: npm run build
+
+  deploy:
+    docker:
+      - image: your-deploy-image:latest  # Specify your deployment image here
+
+    steps:
+      - checkout  # Checkout your source code
+
+      - run:
+          name: Deploy to Production
+          command: |
+            # Your deployment script or commands here
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
