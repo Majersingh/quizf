@@ -7,7 +7,9 @@ jobs:
 
     steps:
       - checkout  # Checkout your source code
-
+       - run:
+          name: Set CI to false
+          command: echo "export CI=false" >> $BASH_ENV
       - run:
           name: Install Dependencies
           command: npm install
