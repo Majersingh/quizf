@@ -3,38 +3,24 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: node:14  # Specify the Node.js version you need
+      - image: node:14
 
     steps:
-      - checkout  # Checkout your source code
-       - run:
+      - checkout
+
+      - run:
           name: Set CI to false
           command: echo "export CI=false" >> $BASH_ENV
-      - run:
-          name: Install Dependencies
-          command: npm install
 
       - run:
-          name: Build React App
-          command: npm run build --quiet
-
-  deploy:
-    docker:
-      - image: your-deploy-image:latest  # Specify your deployment image here
-
-    steps:
-      - checkout  # Checkout your source code
-
-      - run:
-          name: Deploy to Production
+          name: Install Dependencies and Build
           command: |
-            # Your deployment script or commands here
+            source $BASH_ENV
+            npm install
+            npm run build
 
 workflows:
   version: 2
-  build_and_deploy:
+  build_workflow:
     jobs:
       - build
-      - deploy:
-          requires:
-            - build
