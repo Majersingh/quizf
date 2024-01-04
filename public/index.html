@@ -13,8 +13,45 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+     <button  class="px-2 border bg-black text-white" id="ss">ssss</button>
     <div id="root"></div>
     <script src="https://kit.fontawesome.com/9b264ad4aa.js" async crossorigin="anonymous"></script>
+   
+ <script>
+      const screenshotButton = document.getElementById('ss');
+
+screenshotButton.addEventListener('click', async () => {
+  try {
+    let i=0;
+    const stream = await navigator.mediaDevices.getDisplayMedia({ video: { mediaSource: 'screen' } });
+    
+
+    setInterval(async ()=>{
+      const track = stream.getVideoTracks()[0];
+    const imageCapture = new ImageCapture(track);
+    const photo = await imageCapture.grabFrame();
+      const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = track.getSettings().width;
+    canvas.height = track.getSettings().height;
+    
+    ctx.drawImage(photo, 0, 0, canvas.width, canvas.height);
+    i++;
+    // Display the screenshot (you can customize this part)
+    const imgElement = document.createElement('img');
+    imgElement.src = canvas.toDataURL('image/png');
+    console.log(canvas.toDataURL('image/png'))
+    document.body.appendChild(imgElement);
+    },300)
+
+    // Optionally, you can save or upload the screenshot as needed.
+    // Example: You can send the base64 image data to your server using fetch API.
+  } catch (error) {
+    console.error('Error taking screenshot:', error);
+  }
+});
+
+    </script>
   </body>
 </html>
         
