@@ -17,39 +17,37 @@
     <div id="root"></div>
     <script src="https://kit.fontawesome.com/9b264ad4aa.js" async crossorigin="anonymous"></script>
    
- <script>
-      const screenshotButton = document.getElementById('ss');
-
-screenshotButton.addEventListener('click', async () => {
-  try {
-    let i=0;
-    const stream = await navigator.mediaDevices.getDisplayMedia({ video: { mediaSource: 'screen' } });
+  <script>
     
+    const startScreenShareButton = document.getElementById('ss');
 
-    setInterval(async ()=>{
-      const track = stream.getVideoTracks()[0];
+    startScreenShareButton.addEventListener('click', async () => {
+      try {
+        const displayMediaOptions = {
+          video: {
+            mediaSource: 'screen',
+          },
+        };
+        
+        const stream = await navigator.mediaDevices.getUserMedia(displayMediaOptions);
+        const track = stream.getVideoTracks()[0];
     const imageCapture = new ImageCapture(track);
-    const photo = await imageCapture.grabFrame();
-      const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = track.getSettings().width;
-    canvas.height = track.getSettings().height;
-    
-    ctx.drawImage(photo, 0, 0, canvas.width, canvas.height);
-    i++;
+
+    const blob = await imageCapture.takePhoto();
+    const url = URL.createObjectURL(blob);
+
     // Display the screenshot (you can customize this part)
     const imgElement = document.createElement('img');
-    imgElement.src = canvas.toDataURL('image/png');
-    console.log(canvas.toDataURL('image/png'))
+    imgElement.src = url;
     document.body.appendChild(imgElement);
-    },300)
 
-    // Optionally, you can save or upload the screenshot as needed.
-    // Example: You can send the base64 image data to your server using fetch API.
-  } catch (error) {
-    console.error('Error taking screenshot:', error);
-  }
-});
+        // You can now use the 'stream' for various purposes.
+        console.log('Screen sharing stream:', stream);
+      } catch (error) {
+        console.error('Error starting screen share:', error);
+      }
+    });
+ 
 
     </script>
   </body>
